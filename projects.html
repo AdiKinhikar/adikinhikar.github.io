@@ -1,38 +1,150 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Projects | Adi Kinhikar</title><meta name="description" content="Portfolio of Adi Kinhikar, mechanical engineering student at Olin College building toward surgical robotics."><link rel="stylesheet" href="style.css"><script>document.documentElement.classList.add("js")</script></head><body>
-<nav><div class="wrap"><a class="logo" href="index.html">Adi Kinhikar</a><div><a class="l HOME" href="index.html">Home</a><a class="l PROJ on" href="projects.html">Projects</a><a class="l CONT" href="contact.html">Contact</a></div></div></nav>
-<main><div class="wrap">
-  <div class="page-head"><p class="eyebrow">Portfolio</p><h1>Projects</h1><p class="lead">Mechanical design, medical robotics, and lab research.</p></div>
-  <div class="filters">
-    <button class="on" data-f="all">All</button><button data-f="medical">Medical</button><button data-f="mechanical">Mechanical</button><button data-f="bio">Bio</button>
-  </div>
-  <div class="grid" id="grid" style="padding-bottom:50px">
-    <article class="card" data-t="medical mechanical"><span class="meta">In progress &middot; Sept 2026&ndash;</span><h3>Surgical Robot System</h3>
-      <p>Researched systems like da Vinci and Maestro, then began modeling cable-driven arm components in SolidWorks. Focus: reducing arm-to-arm collisions with a thinner, sleeker arm that leaves more clearance.</p>
-      <div class="chips"><span class="chip">SolidWorks</span><span class="chip">Cable drive</span><span class="chip">Workspace analysis</span></div></article>
-    <article class="card" data-t="mechanical"><span class="meta">In progress</span><h3>6-Axis Robotic Arm</h3>
-      <p>Building an arm from scratch with 3D printed parts, designing the joints and gearboxes myself to learn the mechanisms. NEMA 17 steppers, TMC2209 drivers, Arduino Uno control, servo gripper.</p>
-      <div class="chips"><span class="chip">3D printing</span><span class="chip">Arduino</span><span class="chip">Stepper motors</span></div></article>
-    <article class="card" data-t="mechanical"><span class="meta">In progress</span><h3>Two-Stage Planetary Gearbox</h3>
-      <p>Designing a roughly 10:1 two-stage planetary gearbox around a 2 in ring gear, using helical gears for torque density in compact arm joints.</p>
-      <div class="chips"><span class="chip">Gear design</span><span class="chip">Torque</span><span class="chip">CAD</span></div></article>
-    <article class="card" data-t="mechanical"><span class="meta">Olin Baja SAE &middot; Sept 2026&ndash;</span><h3>CVT Guard</h3>
-      <p>Designing a compact CVT guard in Onshape to cut weight from 50 lbs to 20 lbs. Checked mounting and guarding against the 120+ page SAE rulebook and added a color-coded fastener system for faster pit stops.</p>
-      <div class="chips"><span class="chip">Onshape</span><span class="chip">SAE rules</span><span class="chip">Design review</span></div></article>
-    <article class="card" data-t="bio mechanical"><span class="meta">In progress &middot; Sept 2026&ndash;</span><h3>Bio-Influenced Hopper</h3>
-      <p>A hopper inspired by click beetle and froghopper anatomy, designed for a 1 ft jump. Modular parts for reuse; prototyped from fiberwood, rubber tubing, and dowels with jump height and deformation logged every iteration.</p>
-      <div class="chips"><span class="chip">SolidWorks</span><span class="chip">Biomimicry</span><span class="chip">Prototyping</span></div></article>
-    <article class="card" data-t="bio"><span class="meta">Research &middot; Huang's Lab &middot; Sept 2026&ndash;</span><h3>PHB-Degrading Microbial Community</h3>
-      <p>Isolating and culturing members of an anaerobic microbial community that degrades PHB bioplastic. Ran serial dilution series and monitor 14 culture vials weekly.</p>
-      <div class="chips"><span class="chip">Serial dilution</span><span class="chip">Culturing</span><span class="chip">Micropipetting</span></div></article>
-    <article class="card" data-t="medical mechanical"><span class="meta">Olin Assistive Technology Lab</span><h3>Braille Reader</h3>
-      <p>Mechanical and actuation team member on a braille reader that improves access to written text for blind users. Investigated copper wire coils to inform the electromagnetic cam design.</p>
-      <div class="chips"><span class="chip">Actuation</span><span class="chip">Electromagnetics</span><span class="chip">Accessibility</span></div></article>
-    <article class="card" data-t="mechanical"><span class="meta">WPI ACE Labs &middot; Summer 2025</span><h3>Urban Wind Simulation</h3>
-      <p>Ran 2D urban wind simulations in ANSYS Fluent to improve drone delivery stability. Presented weekly to a 9-person research group and wrote a research report.</p>
-      <div class="chips"><span class="chip">ANSYS Fluent</span><span class="chip">CFD</span><span class="chip">Technical writing</span></div></article>
-  </div>
-  <section><h2>Skills</h2>
-    <div class="chips" style="margin-bottom:40px"><span class="chip">SolidWorks</span><span class="chip">Onshape</span><span class="chip">ANSYS Mechanical</span><span class="chip">ANSYS Fluent</span><span class="chip">SpaceClaim</span><span class="chip">MATLAB</span><span class="chip">Python</span><span class="chip">Arduino</span><span class="chip">3D printing</span><span class="chip">CNC plasma cutting</span><span class="chip">Serial dilution</span><span class="chip">Micropipetting</span></div>
-  </section>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects | Adi Kinhikar</title>
+    <meta name="description" content="Portfolio of Adi Kinhikar, mechanical engineering student at Olin College building toward surgical robotics.">
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add("js")</script>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap"><a class="logo" href="index.html">Adi Kinhikar</a>
+        <div><a class="l" href="index.html">Home</a><a class="l  on" href="projects.html">Projects</a><a class="l" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="wrap">
+        <div class="page-head">
+          <p class="eyebrow">Portfolio</p>
+          <h1>Projects</h1>
+          <p class="lead">Mechanical design, medical robotics, and lab research. Click any project to see the full story.</p>
+        </div>
+        <div class="filters"><button class="on" data-f="all">All</button><button data-f="medical">Medical</button><button data-f="mechanical">Mechanical</button><button data-f="bio">Bio</button>
+        </div>
+        <div class="grid" id="grid" style="padding-bottom:50px">
+          <a class="card" href="project-surgical-robot.html" data-t="medical mechanical">
+            <span class="meta">Medical robotics &middot; In progress &middot; Sept 2026&ndash;</span>
+            <h3>Surgical Robot System</h3>
+            <p>Researched da Vinci and Maestro, then began modeling cable-driven arm components in SolidWorks, aiming for a thinner arm that avoids collisions.</p>
+            <div class="chips">
+              <span class="chip">SolidWorks</span>
+              <span class="chip">Cable drive</span>
+              <span class="chip">Workspace analysis</span>
+            </div>
+            <span class="more">View project &rarr;</span>
+          </a>
+          <a class="card" href="project-robotic-arm.html" data-t="mechanical">
+            <span class="meta">Mechanical design &middot; In progress</span>
+            <h3>5-DOF Robotic Arm</h3>
+            <p>A 3D printed arm designed from scratch, including its own gearboxes, driven by NEMA 17 steppers and an Arduino Uno.</p>
+            <div class="chips">
+              <span class="chip">Onshape</span>
+              <span class="chip">3D printing</span>
+              <span class="chip">Arduino</span>
+              <span class="chip">Stepper motors</span>
+              <span class="chip">Inverse kinematics</span>
+            </div>
+            <span class="more">View project &rarr;</span>
+          </a>
+          <a class="card" href="project-planetary-gearbox.html" data-t="mechanical">
+            <span class="meta">Mechanical design &middot; In progress</span>
+            <h3>Two-Stage Planetary Gearbox</h3>
+            <p>A compact ~10:1 gearbox sized around a 2 in ring gear to give the robotic arm's joints more torque.</p>
+            <div class="chips">
+              <span class="chip">Gear design</span>
+              <span class="chip">Helical gears</span>
+              <span class="chip">Torque</span>
+              <span class="chip">CAD</span>
+            </div>
+            <span class="more">View project &rarr;</span>
+          </a>
+          <a class="card" href="project-cvt-guard.html" data-t="mechanical">
+            <span class="meta">Olin Baja SAE &middot; Drivetrain &middot; Sept 2026&ndash;</span>
+            <h3>CVT Guard</h3>
+            <p>A redesigned Baja SAE CVT guard that follows the pulley shape and splits in two on quick-release latches for easy service.</p>
+            <div class="chips">
+              <span class="chip">Onshape</span>
+              <span class="chip">SAE rules</span>
+              <span class="chip">Sheet metal</span>
+              <span class="chip">Design review</span>
+            </div>
+            <span class="more">View project &rarr;</span>
+          </a>
+          <a class="card" href="project-hopper.html" data-t="bio mechanical">
+            <span class="meta">Bio-inspired design &middot; Sept 2026&ndash;</span>
+            <h3>Click Beattle Hopper</h3>
+            <p>A click-beetle-inspired hopper made of easily replaceable modules, powered by bent rubber tubing.</p>
+            <div class="chips">
+              <span class="chip">SolidWorks</span>
+              <span class="chip">Laser cutting</span>
+              <span class="chip">Biomimicry</span>
+              <span class="chip">Prototyping</span>
+            </div>
+            <span class="more">View project &rarr;</span>
+          </a>
+          <a class="card" href="project-phb-research.html" data-t="bio">
+            <span class="meta">Research &middot; Huang's Lab &middot; Sept 2026&ndash;</span>
+            <h3>PHB-Degrading Microbial Community</h3>
+            <p>Isolating and culturing members of an anaerobic community that degrades PHB bioplastic.</p>
+            <div class="chips">
+              <span class="chip">Serial dilution</span>
+              <span class="chip">Anaerobic culture</span>
+              <span class="chip">Micropipetting</span>
+            </div>
+            <span class="more">View project &rarr;</span>
+          </a>
+          <a class="card" href="project-braille-reader.html" data-t="medical mechanical">
+            <span class="meta">Olin Assistive Technology Lab &middot; Sept 2026&ndash;</span>
+            <h3>Braille Reader</h3>
+            <p>Mechanical and actuation work on a braille reader that improves access to text for blind users.</p>
+            <div class="chips">
+              <span class="chip">Actuation</span>
+              <span class="chip">Electromagnetics</span>
+              <span class="chip">Accessibility</span>
+            </div>
+            <span class="more">View project &rarr;</span>
+          </a>
+          <a class="card" href="project-urban-wind.html" data-t="mechanical">
+            <span class="meta">WPI ACE Labs &middot; Summer 2025</span>
+            <h3>Urban Wind Simulation</h3>
+            <p>2D urban wind simulations in ANSYS Fluent to improve drone delivery stability.</p>
+            <div class="chips">
+              <span class="chip">ANSYS Fluent</span>
+              <span class="chip">CFD</span>
+              <span class="chip">Technical writing</span>
+            </div>
+            <span class="more">View project &rarr;</span>
+          </a>
+        </div>
+        <section>
+          <h2>Skills</h2>
+          <div class="chips" style="margin-bottom:40px">
+            <span class="chip">SolidWorks</span>
+            <span class="chip">Onshape</span>
+            <span class="chip">ANSYS Mechanical</span>
+            <span class="chip">ANSYS Fluent</span>
+            <span class="chip">SpaceClaim</span>
+            <span class="chip">MATLAB</span>
+            <span class="chip">Python</span>
+            <span class="chip">Arduino</span>
+            <span class="chip">3D printing</span>
+            <span class="chip">CNC plasma cutting</span>
+            <span class="chip">Serial dilution</span>
+            <span class="chip">Micropipetting</span>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="wrap">&copy; <span class="yr"></span> Adi Kinhikar &middot; Olin College of Engineering
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+ 
 </div></main>
 <footer><div class="wrap">&copy; <span class="yr"></span> Adi Kinhikar &middot; Olin College of Engineering</div></footer><script src="script.js"></script></body></html>
