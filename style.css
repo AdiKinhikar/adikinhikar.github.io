@@ -95,3 +95,10 @@ a.card{display:block;color:inherit}a.card:hover{text-decoration:none}
 .pn{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:50px}
 .pn a{padding:14px 18px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);transition:transform .2s,border-color .2s}
 .pn a:hover{border-color:var(--accent);transform:translateY(-3px);text-decoration:none}
+ 
+/* ===== Figures ===== */
+.fig{margin:24px 0 8px}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.fig img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);background:#fff}
+.fig figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+ 
