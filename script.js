@@ -3,7 +3,7 @@ document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFull
  
 /* ---- scroll reveal with staggered delays ---- */
 const targets = document.querySelectorAll(
-  '.hero>*,.page-head>*,main h2,main section .lead,main section>.chips,main section>.wrap>p,.stats>div,.card,.links a,form,.filters');
+  '.hero>*,.page-head>*,main h2,main section .lead,main section>.chips,main section>.wrap>p,.stats>div,.card,.links a,form,.filters,.prose>*,.facts>div,.pn a');
 const counts = new Map();
 targets.forEach(el => {
   el.classList.add('reveal');
