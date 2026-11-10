@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>5-DOF Robotic Arm | Adi Kinhikar</title>
+    <meta name="description" content="Portfolio of Adi Kinhikar, mechanical engineering student at Olin College building toward surgical robotics.">
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add("js")</script>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap"><a class="logo" href="index.html">Adi Kinhikar</a>
+        <div><a class="l" href="index.html">Home</a><a class="l  on" href="projects.html">Projects</a><a class="l" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="wrap">
+        <div class="page-head"><a class="back" href="projects.html">&larr; All projects</a>
+          <p class="eyebrow">Mechanical design &middot; In progress</p>
+          <h1>5-DOF Robotic Arm</h1>
+          <p class="lead">A 3D printed robotic arm designed from the ground up so I understand every mechanism in it.</p>
+        </div>
+        <div class="facts">
+          <div><span>Degrees of freedom</span><b>5</b>
+          </div>
+          <div><span>CAD</span><b>Onshape</b>
+          </div>
+          <div><span>Controller</span><b>Arduino Uno R3</b>
+          </div>
+        </div>
+        <section>
+          <div class="prose">
+            <h2>Why I'm building it</h2>
+            <p>The goal is learning. Instead of buying off-the-shelf mechanisms, I'm designing the joints and gearboxes myself.</p>
+ 
+            <h2>Hardware</h2>
+            <ul>
+              <li>Five NEMA 17 stepper motors (2 A, 55 N&middot;cm rated) with TMC2209 drivers</li>
+              <li>Arduino Uno R3 as the controller</li>
+              <li>SG90 micro servo for the gripper</li>
+              <li>Upper arm 9 in, forearm 7 in, with parts CAD'd in Onshape and 3D printed</li>
+            </ul>
+ 
+            <h2>Motion and torque</h2>
+            <p>Arm motion is planned with inverse kinematics. Each stepper drives its joint through a two-stage, roughly 10:1 planetary gearbox, which turns the motor's 55 N&middot;cm rating into about 5.5 N&middot;m of theoretical output torque before efficiency losses.</p>
+ 
+            <h2>Electronics</h2>
+            <p>I practiced the Arduino, TMC2209, and NEMA 17 wiring in Cirkit Designer before building the real circuit.</p>
+            <div class="chips">
+              <span class="chip">Onshape</span>
+              <span class="chip">3D printing</span>
+              <span class="chip">Arduino</span>
+              <span class="chip">Stepper motors</span>
+              <span class="chip">Inverse kinematics</span>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="pn">
+            <a href="project-surgical-robot.html">&larr; Surgical Robot System</a>
+            <a href="project-planetary-gearbox.html">Two-Stage Planetary Gearbox &rarr;</a>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="wrap">&copy; <span class="yr"></span> Adi Kinhikar &middot; Olin College of Engineering
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+ 
