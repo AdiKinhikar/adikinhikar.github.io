@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Urban Wind Simulation | Adi Kinhikar</title>
-    <meta name="description" content="Portfolio of Adi Kinhikar, mechanical engineering student at Olin College building toward surgical robotics.">
+    <meta name="description" content="2D computational fluid dynamics simulation of urban winds in ANSYS, from a research internship at WPI's ACE Lab.">
     <link rel="stylesheet" href="style.css">
     <script>document.documentElement.classList.add("js")</script>
   </head>
@@ -18,48 +18,81 @@
     <main>
       <div class="wrap">
         <div class="page-head"><a class="back" href="projects.html">&larr; All projects</a>
-          <p class="eyebrow">WPI ACE Labs &middot; Summer 2025</p>
+          <p class="eyebrow">WPI Autonomy, Control &amp; Estimation Lab &middot; Summer 2025</p>
           <h1>Urban Wind Simulation</h1>
-          <p class="lead">A research internship simulating wind through cities to help delivery drones fly more stably.</p>
+          <p class="lead">A research internship building a 2D fluid simulation of wind moving through city streets, with the long-term goal of making autonomous drone delivery safer.</p>
         </div>
         <div class="facts">
-          <div><span>Lab</span><b>WPI ACE Labs</b>
+          <div><span>Lab</span><b>ACE Lab, Worcester Polytechnic Institute</b>
           </div>
           <div><span>Timeline</span><b>July &ndash; Aug 2025</b>
           </div>
-          <div><span>Tools</span><b>ANSYS Fluent</b>
+          <div><span>Tools</span><b>ANSYS SpaceClaim, Mechanical, Fluent</b>
           </div>
         </div>
         <section>
           <div class="prose">
-            <h2>Overview</h2>
-            <p>As a research intern, I ran 2D urban wind simulations in ANSYS Fluent, working under a PhD student, to improve drone delivery stability.</p>
+            <h2>Why it matters</h2>
+            <p>Autonomous drones that deliver packages have to fly through cities, where streets and buildings change how wind flows. Understanding those wind patterns is a first step toward limiting the risks of drone delivery. My job was to build the simulation that models them.</p>
  
-            <h2>What I did</h2>
+            <h2>The workflow</h2>
+            <ol>
+              <li><b>Learned the tools.</b> I taught myself ANSYS Student through tutorials, following the ones my supervisor suggested along with others I found on my own.</li>
+              <li><b>Built the geometry.</b> In ANSYS SpaceClaim, I drew a multi-block city layout with many intersections.</li>
+              <li><b>Meshed it.</b> In ANSYS Mechanical, I generated an unstructured 2D mesh that is finer at intersections and coarser along straight road segments.</li>
+              <li><b>Ran the flow.</b> In ANSYS Fluent, I started the simulation from standard atmospheric conditions.</li>
+            </ol>
+            <figure class="fig">
+              <div class="figs">
+                <img src="urban-wind-v1-geometry.jpg" alt="First model geometry: a grid of city blocks with identical street widths" width="1000" height="863" loading="lazy">
+                <img src="urban-wind-v1-mesh.jpg" alt="First model mesh, finer at the intersections" width="1000" height="854" loading="lazy">
+              </div>
+              <figcaption>First model: the multi-block geometry (left) and its mesh (right).</figcaption>
+            </figure>
+ 
+            <h2>Finding the flaws and fixing them</h2>
+            <p>The first model worked, but it had two problems that I tracked down and fixed.</p>
             <ul>
-              <li>Set up and ran computational fluid dynamics simulations of airflow around buildings</li>
-              <li>Presented my progress weekly to the lab head and a 9-person research group</li>
-              <li>Wrote a research report on the work</li>
+              <li><b>The geometry was too perfect.</b> Every street had the same width and length. Real cities don't work that way: street dimensions vary with the buildings beside them, and that changes how wind interacts with the buildings and the air.</li>
+              <li><b>The mesh was too coarse at the walls.</b> Building edges create most of the changes in urban wind patterns, so they need a fine mesh. Road centers vary less, so a coarser mesh is enough there.</li>
             </ul>
-            <div class="chips">
-              <span class="chip">ANSYS Fluent</span>
-              <span class="chip">CFD</span>
-              <span class="chip">Technical writing</span>
-            </div>
+            <p>I rebuilt the model with varied street dimensions and a refined mesh along the building walls. To keep the problem manageable, I reduced it to a single city block.</p>
+            <figure class="fig">
+              <div class="figs">
+                <img src="urban-wind-v2-geometry.jpg" alt="Revised geometry: one city block with streets of different widths" width="1000" height="404" loading="lazy">
+                <img src="urban-wind-v2-mesh.jpg" alt="Revised mesh, refined along the building walls" width="1000" height="400" loading="lazy">
+              </div>
+              <figcaption>Revised model: a single block with varied street widths (left) and a mesh refined along the walls (right).</figcaption>
+            </figure>
+ 
+            <h2>Results</h2>
+            <p>The simulation produced pressure and velocity contour plots. The velocity plot resembled the ones I found online for similar setups. The pressure plot below shows a strong pressure change across the block, with a low-pressure region in the cross street between the buildings.</p>
+            <figure class="fig">
+              <img src="urban-wind-pressure.jpg" alt="Static pressure contour for the single-block model, ranging from about -900 to 590 pascals" width="1000" height="483" loading="lazy">
+              <figcaption>Static pressure contour for the single-block model, ranging from about &minus;900 Pa to +590 Pa.</figcaption>
+            </figure>
+ 
+            <h2>Limits and next steps</h2>
+            <p>I treat these results as a working proof of concept, not final answers. Two things would make them more trustworthy:</p>
+            <ul>
+              <li>A better-controlled mesh, since the unstructured mesh could introduce inaccuracies</li>
+              <li>Real weather data for the starting conditions in Fluent, instead of standard atmospheric values</li>
+            </ul>
+ 
+            <h2>What I took away</h2>
+            <p>This was my first real research lab experience, with actual research tasks, weekly presentations to the lab head and a 9-person research group, and a written research report. I learned ANSYS Mechanical, SpaceClaim, and Fluent, which are a big step up from the GMSH and Nek I had used only briefly. It strengthened my CFD and CAD skills, along with teamwork and problem-solving, and it confirmed that I want to keep doing research.</p>
+            <div class="chips"><span class="chip">ANSYS Fluent</span><span class="chip">ANSYS SpaceClaim</span><span class="chip">ANSYS Mechanical</span><span class="chip">CFD</span><span class="chip">Meshing</span><span class="chip">Technical writing</span></div>
           </div>
         </section>
         <section>
-          <div class="pn">
-            <a href="project-braille-reader.html">&larr; Braille Reader</a>
-            <a href="project-surgical-robot.html">Surgical Robot System &rarr;</a>
-          </div>
+          <div class="pn"><a href="project-braille-reader.html">&larr; Braille Reader</a><a href="project-surgical-robot.html">Surgical Robot System &rarr;</a></div>
         </section>
       </div>
     </main>
     <footer>
-      <div class="wrap">&copy; <span class="yr"></span> Adi Kinhikar &middot; Olin College of Engineering
-      </div>
+      <div class="wrap">&copy; <span class="yr"></span> Adi Kinhikar &middot; Olin College of Engineering</div>
     </footer>
     <script src="script.js"></script>
   </body>
 </html>
+ 
