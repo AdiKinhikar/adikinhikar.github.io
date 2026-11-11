@@ -101,4 +101,7 @@ a.card{display:block;color:inherit}a.card:hover{text-decoration:none}
 .figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
 .fig img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);background:#fff}
 .fig figcaption{font-size:14px;color:var(--muted);margin-top:8px}
- 
+.fig.solo img{max-width:380px;margin:0 auto}
+.fig.solo figcaption{text-align:center}
+.figs.three{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));align-items:start}
+.prose li ul{margin-top:8px}
