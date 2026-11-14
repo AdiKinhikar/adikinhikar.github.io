@@ -1,80 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CVT Guard | Adi Kinhikar</title>
-    <meta name="description" content="Portfolio of Adi Kinhikar, mechanical engineering student at Olin College building toward surgical robotics.">
-    <link rel="stylesheet" href="style.css">
-    <script>document.documentElement.classList.add("js")</script>
-  </head>
-  <body>
-    <nav>
-      <div class="wrap"><a class="logo" href="index.html">Adi Kinhikar</a>
-        <div><a class="l" href="index.html">Home</a><a class="l  on" href="projects.html">Projects</a><a class="l" href="contact.html">Contact</a>
-        </div>
-      </div>
-    </nav>
-    <main>
-      <div class="wrap">
-        <div class="page-head"><a class="back" href="projects.html">&larr; All projects</a>
-          <p class="eyebrow">Olin Baja SAE &middot; Drivetrain &middot; Sept 2026&ndash;</p>
-          <h1>CVT Guard</h1>
-          <p class="lead">A redesigned CVT guard for Olin's Baja SAE vehicle, built around the rulebook and made to come off quickly.</p>
-        </div>
-        <div class="facts">
-          <div><span>Team</span><b>Olin Baja SAE, Drivetrain</b>
-          </div>
-          <div><span>Tools</span><b>Onshape</b>
-          </div>
-          <div><span>Rules</span><b>BSAE 2027 Rev A</b>
-          </div>
-        </div>
-        <section>
-          <div class="prose">
-            <h2>Overview</h2>
-            <p>The new guard replaces a heavy, bulky old one. I worked on the design with one other teammate, and we presented it at a design review.</p>
- 
-            <h2>Rules first</h2>
-            <p>Before designing, I gathered every CVT guarding rule from the BSAE 2027 Rev A rulebook. I also checked our firewall mounting method against the 120+ page rulebook.</p>
- 
-            <h2>Design</h2>
-            <ul>
-              <li>Sheet metal that follows the pulley shape, with a shorter main band</li>
-              <li>Front and back plate cutouts that double as ventilation ports</li>
-              <li>A color-coded fastener system for part identification and faster pit stops</li>
-            </ul>
- 
-            <h2>Easy removal</h2>
-            <p>Four McMaster-Carr Style K quick-release latches, two per side, sit halfway along the guard. The guard splits into two pieces, which gives easier and greater reach to the pulley when it's off.</p>
- 
-            <h2>Next steps</h2>
-            <ul>
-              <li>Structural tests for the guard and its mounts</li>
-              <li>Size and weight numbers</li>
-              <li>Finalize vent geometry and cost</li>
-              <li>Add latch mounting holes</li>
-            </ul>
-            <div class="chips">
-              <span class="chip">Onshape</span>
-              <span class="chip">SAE rules</span>
-              <span class="chip">Sheet metal</span>
-              <span class="chip">Design review</span>
-            </div>
-          </div>
-        </section>
-        <section>
-          <div class="pn">
-            <a href="project-planetary-gearbox.html">&larr; Two-Stage Planetary Gearbox</a>
-            <a href="project-hopper.html">Click Beattle &rarr;</a>
-          </div>
-        </section>
-      </div>
-    </main>
-    <footer>
-      <div class="wrap">&copy; <span class="yr"></span> Adi Kinhikar &middot; Olin College of Engineering
-      </div>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Adi Kinhikar, mechanical engineering student at Olin College building toward surgical robotics.">
+<title>CVT Guard Redesign | Adi Kinhikar</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --ink: #1c2330;
+    --muted: #5b6575;
+    --line: #d5d9e0;
+    --accent: #3b5b8c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12161d;
+      --ink: #e8ebf0;
+      --muted: #9aa4b3;
+      --line: #2a313c;
+      --accent: #8fb0e3;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.65; }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  header.site { display: flex; justify-content: space-between; align-items: center; max-width: 960px; margin: 0 auto; padding: 20px 24px; }
+  header.site .brand { font-weight: 700; color: var(--ink); text-decoration: none; }
+  header.site nav a { margin-left: 20px; color: var(--muted); text-decoration: none; }
+  header.site nav a:hover { color: var(--ink); }
+
+  .wrap { max-width: 960px; margin: 0 auto; padding: 8px 24px 80px; }
+  .back { font-size: 0.95rem; text-decoration: none; }
+  .back:hover { text-decoration: underline; }
+  .label { color: var(--muted); margin: 40px 0 0; font-size: 0.95rem; }
+  h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.08; letter-spacing: -0.02em; margin: 8px 0 14px; max-width: 15em; }
+  .sub { color: var(--muted); font-size: 1.1rem; max-width: 40em; margin: 0 0 32px; }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px 28px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 18px 0; margin: 0 0 40px; }
+  .facts div span { display: block; color: var(--muted); font-size: 0.9rem; }
+  .facts div strong { font-weight: 600; }
+
+  figure { margin: 0; }
+  .photo { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 12px; }
+  .photo img { display: block; width: 100%; height: auto; }
+  .hero { opacity: 0; transform: translateY(14px); animation: rise 0.8s ease 0.1s forwards; }
+  .hero img { max-width: 560px; margin: 0 auto; }
+  figcaption { color: var(--muted); font-size: 0.9rem; margin-top: 8px; text-align: center; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 24px 0 8px; }
+  .pair .photo img { max-height: 340px; object-fit: contain; }
+  .trio { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 24px 0 8px; }
+  .trio .photo img { max-height: 220px; object-fit: contain; }
+
+  h2 { font-size: 1.5rem; letter-spacing: -0.01em; margin: 64px 0 12px; }
+  p, ul { max-width: 64ch; }
+  p { margin: 0 0 16px; }
+  ul { padding-left: 1.2em; margin: 0 0 16px; }
+  li { margin-bottom: 10px; }
+  li strong { font-weight: 600; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 40px 0 0; padding: 0; list-style: none; max-width: none; }
+  .tags li { margin: 0; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; color: var(--muted); font-size: 0.9rem; }
+
+  footer { max-width: 960px; margin: 0 auto; padding: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero { animation: none; opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a class="brand" href="index.html">Adi Kinhikar</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <a class="back" href="projects.html">&larr; All projects</a>
+
+  <p class="label">Olin Baja SAE &middot; In progress</p>
+  <h1>CVT Guard Redesign</h1>
+  <p class="sub">A smaller, lighter sheet metal guard for the Baja car&rsquo;s CVT that wraps tightly around the pulleys and opens in the middle on quick-release latches.</p>
+
+  <div class="facts">
+    <div><span>Timeline</span><strong>Sept 2026 &ndash; present</strong></div>
+    <div><span>Role</span><strong>Drivetrain subteam, co-designer</strong></div>
+    <div><span>Tools</span><strong>Onshape, plasma cutting, sheet metal bending</strong></div>
+  </div>
+
+  <figure class="photo hero">
+    <img src="cvt-guard-new.jpg" alt="Onshape model of the new two-piece CVT guard following the shape of both pulleys">
+    <figcaption>The new guard in Onshape</figcaption>
+  </figure>
+
+  <h2>Overview</h2>
+  <p>The CVT guard covers the belt and pulleys on our Baja car. The SAE rules require one, so it has to protect people from the spinning parts, but our old guard was big and heavy. I co-designed a replacement that does the same job in less space and with less material, then presented the design review to the drivetrain subteam.</p>
+
+  <h2>What the rules require</h2>
+  <p>Section B.9 of the SAE Baja rulebook sets the constraints, and I turned the relevant parts of this 120+ page document into design requirements for the subteam:</p>
+  <ul>
+    <li>Made from 1.5 mm steel or 3 mm aluminum (B.9.2.1)</li>
+    <li>Wider than the pulleys by 0.5 in, with at least 0.5 in overlap on multipart covers (B.9.2.2.1)</li>
+    <li>Rigid, and keeps fingers and clothing out (B.9.3, B.9.3.1)</li>
+    <li>Fastened only with threaded fasteners or quick-release latches (B.9.3.2)</li>
+  </ul>
+
+  <h2>The old guard</h2>
+  <p>The old guard had built-in vents, but it took up a lot of space, weighed 4.4 kg, and wasn&rsquo;t well optimized. The goals for the new one were simple: more compact and lighter.</p>
+  <figure class="photo" style="max-width:560px">
+    <img src="cvt-guard-old.jpg" alt="The old CVT guard mounted on the car, a flat oval plate with mesh vent panels" loading="lazy">
+    <figcaption>The old guard on the car</figcaption>
+  </figure>
+
+  <h2>The new design</h2>
+  <ul>
+    <li><strong>More compact.</strong> The old guard left a lot of dead space between the front of the primary pulley and the secondary pulley. In the new design the sheet metal follows the contour of the pulleys, so that space is gone.</li>
+    <li><strong>Lighter.</strong> The main metal band is much shorter, and there are cutouts in the front and back plates that remove more material.</li>
+    <li><strong>Ventilation.</strong> The same cutouts double as vent ports, so the lightening cuts also let air through.</li>
+  </ul>
+  <figure class="photo" style="max-width:560px">
+    <img src="cvt-guard-on-engine.jpg" alt="Onshape model of the new guard mounted on the engine, following the pulleys and belt" loading="lazy">
+    <figcaption>The new guard on the engine</figcaption>
+  </figure>
+
+  <h2>Latches</h2>
+  <p>The guard is split into two pieces joined midway by four quick-release draw latches, two on each side. I led the selection and mounting design. Opening the guard exposes more of the pulleys, so they&rsquo;re easier to inspect and the team spends less time on them at a pit stop.</p>
+  <div class="pair">
+    <figure>
+      <div class="photo"><img src="cvt-latch.jpg" alt="CAD model of a Style K draw latch with its keeper" loading="lazy"></div>
+      <figcaption>McMaster-Carr Style K draw latch</figcaption>
+    </figure>
+  </div>
+  <ul>
+    <li>Bent latch design, 17-7 PH stainless steel</li>
+    <li>Screw-on keeper, and widely available if we need replacements</li>
+    <li>Quick-release latches are allowed by the rules (B.9.3.2)</li>
+  </ul>
+
+  <h2>Fabrication</h2>
+  <p>The guard is made in-house from steel. Flat parts are plasma cut and the casings are bent from sheet metal.</p>
+  <ul>
+    <li><strong>Plasma cut:</strong> front panel, back panel, primary pulley cover, secondary pulley cover, and the Olin logo.</li>
+    <li><strong>Sheet metal bend:</strong> primary pulley casing, front casing, back casing, and secondary pulley casing.</li>
+    <li><strong>Material estimate:</strong> I treated every part as a rectangle to estimate the steel to order, which came to about 812 in&sup2; in total.</li>
+  </ul>
+  <div class="trio">
+    <figure>
+      <div class="photo"><img src="cvt-back-panel.jpg" alt="Flat pattern of the back panel with vent cutouts" loading="lazy"></div>
+      <figcaption>Back panel</figcaption>
+    </figure>
+    <figure>
+      <div class="photo"><img src="cvt-front-panel.jpg" alt="Flat pattern of the front panel" loading="lazy"></div>
+      <figcaption>Front panel</figcaption>
+    </figure>
+    <figure>
+      <div class="photo"><img src="cvt-primary-cover.jpg" alt="Primary pulley cover with the Olin logo cutout" loading="lazy"></div>
+      <figcaption>Primary pulley cover and Olin logo</figcaption>
+    </figure>
+  </div>
+
+  <h2>What&rsquo;s next</h2>
+  <ul>
+    <li>Structural tests for the guard and its mounts</li>
+    <li>Measure the actual size and weight reduction compared with the old guard</li>
+    <li>Finalize the vent geometry and the cost</li>
+    <li>Add mounting holes for the latches and clean up the model</li>
+  </ul>
+
+  <ul class="tags">
+    <li>Onshape</li>
+    <li>Sheet metal design</li>
+    <li>Plasma cutting</li>
+    <li>Design for manufacturing</li>
+    <li>SAE Baja</li>
+  </ul>
+</main>
+
+<footer>&copy; Adi Kinhikar &middot; Olin College of Engineering</footer>
+
+</body>
 </html>
