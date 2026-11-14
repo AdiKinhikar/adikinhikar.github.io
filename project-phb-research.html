@@ -1,69 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PHB-Degrading Microbial Community | Adi Kinhikar</title>
-    <meta name="description" content="Portfolio of Adi Kinhikar, mechanical engineering student at Olin College building toward surgical robotics.">
-    <link rel="stylesheet" href="style.css">
-    <script>document.documentElement.classList.add("js")</script>
-  </head>
-  <body>
-    <nav>
-      <div class="wrap"><a class="logo" href="index.html">Adi Kinhikar</a>
-        <div><a class="l" href="index.html">Home</a><a class="l  on" href="projects.html">Projects</a><a class="l" href="contact.html">Contact</a>
-        </div>
-      </div>
-    </nav>
-    <main>
-      <div class="wrap">
-        <div class="page-head"><a class="back" href="projects.html">&larr; All projects</a>
-          <p class="eyebrow">Research &middot; Huang's Lab &middot; Sept 2026&ndash;</p>
-          <h1>PHB-Degrading Microbial Community</h1>
-          <p class="lead">Lab research on an anaerobic microbial community that breaks down PHB, a biodegradable plastic.</p>
-        </div>
-        <div class="facts">
-          <div><span>Lab</span><b>Huang's Lab, Olin</b>
-          </div>
-          <div><span>Role</span><b>Undergraduate researcher</b>
-          </div>
-          <div><span>Community</span><b>8 members</b>
-          </div>
-        </div>
-        <section>
-          <div class="prose">
-            <h2>Overview</h2>
-            <p>Our lab studies a community of anaerobic microbes that degrade PHB. My team is working to isolate individual members and grow each one on its own.</p>
- 
-            <h2>What I do</h2>
-            <ul>
-              <li>Set up 7-tube serial dilution series in agar with acetate or PHB</li>
-              <li>Monitor 14 culture vials weekly</li>
-              <li>Prepare cultures and use micropipetting for precise transfers</li>
-            </ul>
- 
-            <h2>Team report</h2>
-            <p>With teammates, I'm writing a report on isolating and individually culturing members of the community.</p>
-            <div class="chips">
-              <span class="chip">Serial dilution</span>
-              <span class="chip">Anaerobic culture</span>
-              <span class="chip">Micropipetting</span>
-            </div>
-          </div>
-        </section>
-        <section>
-          <div class="pn">
-            <a href="project-hopper.html">&larr; Click Beattle</a>
-            <a href="project-braille-reader.html">Braille Reader &rarr;</a>
-          </div>
-        </section>
-      </div>
-    </main>
-    <footer>
-      <div class="wrap">&copy; <span class="yr"></span> Adi Kinhikar &middot; Olin College of Engineering
-      </div>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Adi Kinhikar, mechanical engineering student at Olin College building toward surgical robotics.">
+<title>PHB-Degrading Microbe Isolation | Adi Kinhikar</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --ink: #1c2330;
+    --muted: #5b6575;
+    --line: #d5d9e0;
+    --accent: #3b5b8c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12161d;
+      --ink: #e8ebf0;
+      --muted: #9aa4b3;
+      --line: #2a313c;
+      --accent: #8fb0e3;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.65; }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  header.site { display: flex; justify-content: space-between; align-items: center; max-width: 960px; margin: 0 auto; padding: 20px 24px; }
+  header.site .brand { font-weight: 700; color: var(--ink); text-decoration: none; }
+  header.site nav a { margin-left: 20px; color: var(--muted); text-decoration: none; }
+  header.site nav a:hover { color: var(--ink); }
+
+  .wrap { max-width: 960px; margin: 0 auto; padding: 8px 24px 80px; }
+  .back { font-size: 0.95rem; text-decoration: none; }
+  .back:hover { text-decoration: underline; }
+  .label { color: var(--muted); margin: 40px 0 0; font-size: 0.95rem; }
+  h1 { font-size: clamp(2.1rem, 6vw, 3.3rem); line-height: 1.08; letter-spacing: -0.02em; margin: 8px 0 14px; max-width: 16em; }
+  .sub { color: var(--muted); font-size: 1.1rem; max-width: 40em; margin: 0 0 32px; }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px 28px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 18px 0; margin: 0 0 40px; }
+  .facts div span { display: block; color: var(--muted); font-size: 0.9rem; }
+  .facts div strong { font-weight: 600; }
+
+  figure { margin: 0; }
+  .photo { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 8px; }
+  .photo img { display: block; width: 100%; height: auto; }
+  figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 6px; text-align: center; }
+
+  .hero { opacity: 0; transform: translateY(14px); animation: rise 0.8s ease 0.1s forwards; max-width: 460px; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  .rowlabel { font-weight: 600; margin: 28px 0 8px; }
+  .strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  @media (max-width: 700px) { .strip { grid-template-columns: repeat(2, 1fr); } }
+  .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 24px 0 8px; }
+  .pair .photo img { max-height: 420px; object-fit: contain; }
+
+  h2 { font-size: 1.5rem; letter-spacing: -0.01em; margin: 64px 0 12px; }
+  p, ul, ol { max-width: 64ch; }
+  p { margin: 0 0 16px; }
+  ul, ol { padding-left: 1.3em; margin: 0 0 16px; }
+  li { margin-bottom: 10px; }
+  li strong { font-weight: 600; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 40px 0 0; padding: 0; list-style: none; max-width: none; }
+  .tags li { margin: 0; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; color: var(--muted); font-size: 0.9rem; }
+
+  footer { max-width: 960px; margin: 0 auto; padding: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero { animation: none; opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a class="brand" href="index.html">Adi Kinhikar</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <a class="back" href="projects.html">&larr; All projects</a>
+
+  <p class="label">Microbiology research &middot; In progress</p>
+  <h1>Isolating Microbes from a PHB-Degrading Community</h1>
+  <p class="sub">Separating the members of an 8-microbe community that breaks down a biodegradable plastic without oxygen, so each one can be studied on its own.</p>
+
+  <div class="facts">
+    <div><span>Timeline</span><strong>Sept 2026 &ndash; present</strong></div>
+    <div><span>Lab</span><strong>Dr. Jean J. Huang&rsquo;s lab, Olin College</strong></div>
+    <div><span>Methods</span><strong>Serial dilution in agar, anaerobic culturing</strong></div>
+  </div>
+
+  <figure class="photo hero">
+    <img src="culture-acetate-1e7.jpg" alt="Close-up of a culture tube from the 10 to the 7 dilution fed by acetate, with dense growth and one large colony">
+    <figcaption>10&#8311; dilution fed by acetate on 11/12: dense growth and one large colony</figcaption>
+  </figure>
+
+  <h2>Overview</h2>
+  <p>PHB is a biodegradable plastic made by bacteria. Our lab works with an established community of 8 microbes that degrades PHB in an oxygen-free environment. The community works as a group, so it&rsquo;s hard to tell which member does what. The goal of this project is to separate the individual microbes, try to grow them on their own, and see whether that&rsquo;s feasible for later experiments.</p>
+
+  <h2>What I did</h2>
+  <ul>
+    <li><strong>Serial dilution in agar.</strong> I set up two series of 7 tubes. Each tube holds 3 mL of agar and 6 mL of growth media, and the first tube also gets 1 mL of the original community. Each following tube gets 1 mL from the previous tube, so each one is more dilute and the microbes spread out far enough to grow as separate colonies. One series is fed PHB powder and the other acetate, giving 14 cultures in total.</li>
+    <li><strong>Weekly monitoring.</strong> Every week since 10/15, we photographed all 14 tubes and logged growth, color changes, and signs of contamination in a shared sheet.</li>
+    <li><strong>Literature research.</strong> I researched how microbes break down PHB without oxygen, and compared two organisms from the community, <em>Koribacter</em> and <em>Terracidiphilus</em>.</li>
+  </ul>
+
+  <h2>Growth over 5 weeks</h2>
+  <p>At the start, only the first and most concentrated tube in each series had a slight pink tinge, and the rest looked like plain agar. Over the following weeks, growth appeared across more of the tubes.</p>
+
+  <p class="rowlabel">PHB powder series</p>
+  <div class="strip">
+    <figure class="photo"><img src="culture-phb-1015.jpg" alt="PHB series tubes on 10/15" loading="lazy"><figcaption>10/15</figcaption></figure>
+    <figure class="photo"><img src="culture-phb-1022.jpg" alt="PHB series tubes on 10/22" loading="lazy"><figcaption>10/22</figcaption></figure>
+    <figure class="photo"><img src="culture-phb-1029.jpg" alt="PHB series tubes on 10/29" loading="lazy"><figcaption>10/29</figcaption></figure>
+    <figure class="photo"><img src="culture-phb-1105.jpg" alt="PHB series tubes on 11/5" loading="lazy"><figcaption>11/5</figcaption></figure>
+    <figure class="photo"><img src="culture-phb-1112.jpg" alt="PHB series tubes on 11/12" loading="lazy"><figcaption>11/12</figcaption></figure>
+  </div>
+
+  <p class="rowlabel">Acetate series</p>
+  <div class="strip">
+    <figure class="photo"><img src="culture-acetate-1015.jpg" alt="Acetate series tubes on 10/15" loading="lazy"><figcaption>10/15</figcaption></figure>
+    <figure class="photo"><img src="culture-acetate-1022.jpg" alt="Acetate series tubes on 10/22" loading="lazy"><figcaption>10/22</figcaption></figure>
+    <figure class="photo"><img src="culture-acetate-1029.jpg" alt="Acetate series tubes on 10/29" loading="lazy"><figcaption>10/29</figcaption></figure>
+    <figure class="photo"><img src="culture-acetate-1105.jpg" alt="Acetate series tubes on 11/5" loading="lazy"><figcaption>11/5</figcaption></figure>
+    <figure class="photo"><img src="culture-acetate-1112.jpg" alt="Acetate series tubes on 11/12" loading="lazy"><figcaption>11/12</figcaption></figure>
+  </div>
+
+  <h2>Results so far</h2>
+  <p>By 11/12, the most dilute acetate tube (10&#8311;) showed a burst of growth with one large colony. The PHB powder tube at 10&#8310; had small, flake-like colonies, which is a different look from the acetate cultures.</p>
+  <div class="pair">
+    <figure>
+      <div class="photo"><img src="culture-acetate-1e7.jpg" alt="Acetate-fed 10 to the 7 dilution with dense growth and a single large colony" loading="lazy"></div>
+      <figcaption>10&#8311; dilution, acetate-fed: dense growth and one large colony</figcaption>
+    </figure>
+    <figure>
+      <div class="photo"><img src="culture-phb-1e6.jpg" alt="PHB-fed 10 to the 6 dilution with flake-like colonies" loading="lazy"></div>
+      <figcaption>10&#8310; dilution, PHB powder-fed: flake-like colonies</figcaption>
+    </figure>
+  </div>
+  <p>These colonies look separated, but that doesn&rsquo;t prove each one is a single species. A visibly isolated colony isn&rsquo;t the same as a confirmed pure culture, so we haven&rsquo;t confirmed any isolates yet.</p>
+
+  <h2>How microbes break down PHB without oxygen</h2>
+  <p>This is the pathway I mapped in my literature notes:</p>
+  <ol>
+    <li><strong>Colonization.</strong> Microbes attach to the PHB surface and form a biofilm.</li>
+    <li><strong>Hydrolysis.</strong> They release PHB depolymerase enzymes, which use water to cut the plastic into small pieces and single 3-hydroxybutyrate units that dissolve in water.</li>
+    <li><strong>Conversion to acetyl-CoA.</strong> 3-hydroxybutyrate becomes acetoacetate, then acetoacetyl-CoA, then two molecules of acetyl-CoA.</li>
+    <li><strong>Fermentation.</strong> Without oxygen, acetyl-CoA can&rsquo;t enter the Krebs cycle, so bacteria ferment it into volatile fatty acids, mostly acetate, plus hydrogen and CO<sub>2</sub>.</li>
+    <li><strong>Methanogenesis.</strong> Archaea turn the acetate, or the hydrogen and CO<sub>2</sub>, into methane.</li>
+  </ol>
+
+  <h2>Two community members: Koribacter and Terracidiphilus</h2>
+  <p>Both are Gram-negative soil bacteria that mostly live with oxygen. <em>Terracidiphilus</em> has been reported to grow on complex plant polymers like cellulose, hemicellulose, and chitin, so it is a heavy-duty carbon processor. <em>Koribacter</em> looks different in our data: it doesn&rsquo;t have the usual PTA&ndash;ACK pathway for converting acetyl-CoA to acetate, and instead has the genes <em>acdA</em> and <em>acs</em>. That suggests it may both make acetate and take it back up, depending on conditions.</p>
+
+  <h2>Next steps</h2>
+  <ul>
+    <li>Repeat isolation for samples that didn&rsquo;t give distinguishable colonies</li>
+    <li>Verify the identity and purity of each isolate</li>
+    <li>Compare growth characteristics between isolates</li>
+    <li>Test whether the isolates can be maintained on their own</li>
+  </ul>
+
+  <ul class="tags">
+    <li>Serial dilution</li>
+    <li>Anaerobic culturing</li>
+    <li>PHB</li>
+    <li>Biodegradable plastics</li>
+    <li>Microbiology</li>
+  </ul>
+</main>
+
+<footer>&copy; Adi Kinhikar &middot; Olin College of Engineering</footer>
+
+</body>
 </html>
- 
