@@ -100,7 +100,9 @@ a.card{display:block;color:inherit}a.card:hover{text-decoration:none}
 .fig{margin:24px 0 8px}
 .figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
 .fig img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);background:#fff}
-.fig figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+/* Keep paired full-view images the same displayed size while preserving their full contents. */
+.figs img{height:320px;object-fit:contain}
+figcaption{font-size:14px;color:var(--muted);margin-top:8px}
 .fig.solo img{max-width:380px;margin:0 auto}
 .fig.solo figcaption{text-align:center}
 .figs.three{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));align-items:start}
@@ -158,10 +160,10 @@ figcaption{margin-top:8px;color:var(--muted);font-size:14px}
 .pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:24px 0 8px}
 .trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:24px 0 8px}
 .trio .photo img{max-height:220px;object-fit:contain}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:24px 0;padding:0;list-style:none}
-.tags li{margin:0;padding:3px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted);font-size:12px}
 .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
 .rowlabel{margin:24px 0 8px;font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:24px 0;padding:0;list-style:none}
+.tags li{margin:0;padding:3px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted);font-size:12px}
 header.site+main.wrap{padding-top:20px}
 footer{max-width:none;margin:0;padding:30px max(20px,calc((100% - 920px)/2));color:var(--muted);font-size:14px}
 @media(max-width:600px){header.site{padding:16px 20px;flex-wrap:wrap;gap:12px}header.site nav{gap:12px}}
