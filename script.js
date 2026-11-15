@@ -35,31 +35,6 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
 targets.forEach(el => io.observe(el));
 
-/* ---- project filters (cards re-animate) ---- */
-const btns = document.querySelectorAll('.filters button');
-const cards = document.querySelectorAll('#grid .card');
-btns.forEach(b => {
-  b.type = 'button';
-  b.addEventListener('click', () => {
-    btns.forEach(x => x.classList.remove('on'));
-    b.classList.add('on');
-
-    const selected = b.dataset.f;
-    let i = 0;
-    cards.forEach(c => {
-      const tags = (c.dataset.t || '').split(/\s+/).filter(Boolean);
-      const show = selected === 'all' || tags.includes(selected);
-      c.classList.toggle('hide', !show);
-      if (!show) return;
-      c.classList.remove('in', 'done');
-      c.style.setProperty('--d', (i++ * 0.06) + 's');
-      void c.offsetWidth;
-      c.classList.add('in');
-      setTimeout(() => c.classList.add('done'), 1200);
-    });
-  });
-});
-
 /* ---- nav shadow, scroll progress bar, gentle hero parallax ---- */
 const nav = document.querySelector('nav'), hero = document.querySelector('.hero');
 const bar = document.createElement('div'); bar.id = 'bar'; document.body.appendChild(bar);
