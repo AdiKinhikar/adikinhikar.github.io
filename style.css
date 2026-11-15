@@ -77,7 +77,7 @@ nav a.l:hover::after,nav a.on::after{transform:scaleX(1)}
 .filters button{transition:background .2s,color .2s,transform .2s}.filters button:hover{transform:translateY(-1px)}
  
 @media (prefers-reduced-motion:reduce){
- *,*::before{animation:none!important;transition:none!important}
+ *,*::before,*::after{animation:none!important;transition:none!important}
  .js .reveal{opacity:1!important;transform:none!important}
 }
  
@@ -105,3 +105,34 @@ a.card{display:block;color:inherit}a.card:hover{text-decoration:none}
 .fig.solo figcaption{text-align:center}
 .figs.three{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));align-items:start}
 .prose li ul{margin-top:8px}
+
+/* Compatibility for legacy project pages using the shared portfolio theme */
+header.site{display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5;max-width:none;margin:0;padding:20px max(24px,calc((100% - 920px)/2));background:var(--bg);border-bottom:1px solid var(--line)}
+header.site .brand{font-weight:700;font-size:18px;color:var(--text);text-decoration:none}
+header.site nav{position:static;display:flex;gap:22px;background:transparent;border:0;box-shadow:none}
+header.site nav a{margin:0;color:var(--muted);font-size:15px;text-decoration:none}
+header.site nav a:hover{color:var(--text)}
+main.wrap{padding-top:20px;padding-bottom:50px}
+main.wrap>.back{margin-bottom:18px}
+main.wrap>.label{margin:20px 0 8px;color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+main.wrap>h1{margin:0 0 16px}
+main.wrap>.sub{max-width:640px;margin:0 0 28px;color:var(--muted);font-size:20px}
+main.wrap>h2{margin:44px 0 20px}
+main.wrap>p,main.wrap>ul,main.wrap>ol{max-width:720px}
+main.wrap>p{color:var(--muted);font-size:17px}
+main.wrap>ul,main.wrap>ol{padding-left:22px;color:var(--muted);font-size:17px}
+main.wrap li{margin-bottom:6px}
+figure{margin:24px 0 8px}
+.photo{padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.photo img{display:block;width:100%;height:auto}
+figcaption{margin-top:8px;color:var(--muted);font-size:14px}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:24px 0 8px}
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:24px 0 8px}
+.trio .photo img{max-height:220px;object-fit:contain}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:24px 0;padding:0;list-style:none}
+.tags li{margin:0;padding:3px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted);font-size:12px}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
+.rowlabel{margin:24px 0 8px;font-weight:600}
+header.site+main.wrap{padding-top:20px}
+footer{max-width:none;margin:0;padding:30px max(20px,calc((100% - 920px)/2));color:var(--muted);font-size:14px}
+@media(max-width:600px){header.site{padding:16px 20px;flex-wrap:wrap;gap:12px}header.site nav{gap:12px}}
