@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An original four-arm surgical robot inspired by the da Vinci, designed in SolidWorks.">
-  <title>Surgical Robot System | Adi Kinhikar</title>
+  <meta name="description" content="Four-arm surgical robotic system designed in SolidWorks, with independently articulated instrument arms and a focus on arm clearance.">
+  <title>Four-Arm Surgical Robotic System | Adi Kinhikar</title>
   <link rel="stylesheet" href="style.css">
   <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -24,30 +24,54 @@
       <div class="page-head">
         <a class="back" href="projects.html">&larr; All projects</a>
         <p class="eyebrow">Robotics &middot; SolidWorks</p>
-        <h1>Surgical robot with arms that don't collide</h1>
-        <p class="lead">An original four-arm surgical robot inspired by the da Vinci, designed in SolidWorks.</p>
+        <h1>Four-Arm Surgical Robotic System</h1>
+        <p class="lead">A four-arm robotic architecture with independently articulated instrument arms, designed to explore improved clearance between neighboring arms.</p>
       </div>
+
+      <div class="facts">
+        <div><span>Timeline</span><b>September &ndash; October 2026</b></div>
+        <div><span>Tools</span><b>SolidWorks</b></div>
+        <div><span>System</span><b>Four arms, eight joints per arm</b></div>
+      </div>
+
       <figure class="fig solo">
-        <img src="surgical-robot.png" alt="SolidWorks model of a four-arm surgical robot with a central column, overhead boom, and H-shaped base">
-        <figcaption>Full assembly in SolidWorks</figcaption>
+        <img src="surgical-robot.png" alt="Complete SolidWorks assembly of a four-arm surgical robotic system with overhead support boom, central column, and H-shaped base">
+        <figcaption>Complete four-arm robotic assembly</figcaption>
       </figure>
+
       <section>
         <div class="prose">
-          <h2>The problem</h2>
-          <p>On the da Vinci system, the robotic arms can collide with each other during surgery. That limits where the arms can go and how the surgical team can set up around the patient.</p>
-          <h2>What I built</h2>
-          <p>I designed my own version with thinner arm links, so there is more clearance between neighboring arms. The whole system is modeled as one SolidWorks assembly.</p>
-          <h2>Design details</h2>
+          <h2>Overview</h2>
+          <p>I designed a four-arm surgical robotic system inspired by the da Vinci surgical platform. The project focused on mechanical architecture, independently articulated arms, and instrument positioning.</p>
+          <p>Multi-arm surgical systems need several instruments to operate within a shared workspace. The size and position of neighboring arms can create mechanical interference and restrict available configurations. I explored whether slimmer arm geometry could increase clearance while preserving flexibility for instrument positioning.</p>
+
+          <h2>Mechanical design</h2>
+          <p>The complete SolidWorks assembly integrates four independently articulated arms, instrument linkages, and the supporting structure.</p>
           <ul>
-            <li>Four arms, each with 8 joints</li>
-            <li>Jointed instrument linkages on each arm</li>
-            <li>Overhead boom, central column, and H-shaped base</li>
-            <li>Modeled in SolidWorks; project underway since September 2026</li>
+            <li><b>Articulated arms:</b> Four arms, each designed with eight joints. I made the links slimmer to reduce their physical envelope and qualitatively improve clearance between neighboring arms.</li>
+            <li><b>Surgical instruments:</b> Instrument linkages and mechanisms designed from scratch, drawing inspiration from the da Vinci instrument architecture and integrated into the arms.</li>
+            <li><b>System structure:</b> An overhead support boom, central structural column, and H-shaped base support the four-arm assembly.</li>
           </ul>
+
+          <figure class="fig solo">
+            <img src="surgical-instrument-linkage.png" alt="SolidWorks CAD model of an articulated surgical instrument arm and instrument linkage">
+            <figcaption>Articulated surgical instrument arm and linkage</figcaption>
+          </figure>
+
+          <h2>Design approach</h2>
+          <p>The primary design consideration was the spatial relationship between neighboring arms. Reducing the thickness of the arm links let me explore a more compact geometry intended to improve available clearance. I evaluated that improvement qualitatively in CAD; I did not perform numerical interference analysis or physical testing.</p>
+          <p>I developed the system as a complete SolidWorks assembly, integrating the articulated arms, instrument mechanisms, and supporting structure.</p>
+
+          <h2>Project scope</h2>
+          <p>This iteration focused on mechanical architecture, component design, and CAD assembly development. The result is a conceptual surgical robotic system. Physical prototyping, quantitative motion validation, and clinical testing were outside the project scope.</p>
+
           <div class="chips">
             <span class="chip">SolidWorks</span>
-            <span class="chip">Surgical robotics</span>
             <span class="chip">Mechanical design</span>
+            <span class="chip">Robotic mechanisms</span>
+            <span class="chip">Articulated systems</span>
+            <span class="chip">CAD assembly design</span>
+            <span class="chip">Instrument design</span>
           </div>
         </div>
       </section>
