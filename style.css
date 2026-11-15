@@ -106,6 +106,35 @@ a.card{display:block;color:inherit}a.card:hover{text-decoration:none}
 .figs.three{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));align-items:start}
 .prose li ul{margin-top:8px}
 
+/* ----------------------------------------------
+   Project-page consistency pass (all portfolio pages)
+---------------------------------------------- */
+.page-head{display:grid;gap:10px}
+.page-head .eyebrow{margin:0}
+.page-head h1{margin:0}
+.page-head .lead{margin:0}
+main .wrap{padding-bottom:56px}
+.main-figure, .fig.solo{display:grid;gap:8px}
+section + section{margin-top:10px}
+.prose > p + p,
+.prose > ul + p,
+.prose > ol + p,
+.prose > h2 + p,
+.prose > h2 + ul,
+.prose > h2 + ol{margin-top:0}
+.prose h2{scroll-margin-top:80px}
+.prose li strong,.prose li b{color:var(--text)}
+.chips{margin-top:18px}
+.chips .chip{display:inline-flex;align-items:center;height:24px;line-height:1}
+@media (max-width:620px){
+  nav .wrap{height:auto;padding:16px 0;gap:12px;flex-direction:column;align-items:flex-start}
+  nav a.l{margin-left:0;margin-right:16px}
+  .page-head{padding-top:40px}
+  .facts{padding:16px 0}
+  .pn{flex-direction:column}
+  .pn a{width:100%}
+}
+
 /* Compatibility for legacy project pages using the shared portfolio theme */
 header.site{display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5;max-width:none;margin:0;padding:20px max(24px,calc((100% - 920px)/2));background:var(--bg);border-bottom:1px solid var(--line)}
 header.site .brand{font-weight:700;font-size:18px;color:var(--text);text-decoration:none}
