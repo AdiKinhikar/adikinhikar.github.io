@@ -1,6 +1,6 @@
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());
- 
+
 /* ---- scroll reveal with staggered delays ---- */
 const targets = document.querySelectorAll(
   '.hero>*,.page-head>*,main h2,main section .lead,main section>.chips,main section>.wrap>p,.stats>div,.card,.links a,form,.filters,.prose>*,.facts>div,.pn a');
@@ -11,7 +11,7 @@ targets.forEach(el => {
   counts.set(el.parentElement, i + 1);
   el.style.setProperty('--d', Math.min(i * 0.09, 0.45) + 's');
 });
- 
+
 function countUp(el) {
   const end = +el.dataset.count;
   if (reduce) return;
@@ -22,7 +22,7 @@ function countUp(el) {
     if (p < 1) requestAnimationFrame(tick);
   })(t0);
 }
- 
+
 const io = new IntersectionObserver(entries => {
   entries.forEach(en => {
     if (!en.isIntersecting) return;
@@ -34,25 +34,32 @@ const io = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
 targets.forEach(el => io.observe(el));
- 
+
 /* ---- project filters (cards re-animate) ---- */
-const btns = document.querySelectorAll('.filters button'),
-      cards = document.querySelectorAll('#grid .card');
-btns.forEach(b => b.addEventListener('click', () => {
-  btns.forEach(x => x.classList.remove('on')); b.classList.add('on');
-  let i = 0;
-  cards.forEach(c => {
-    const show = b.dataset.f === 'all' || c.dataset.t.split(' ').includes(b.dataset.f);
-    c.classList.toggle('hide', !show);
-    if (!show) return;
-    c.classList.remove('in', 'done');
-    c.style.setProperty('--d', (i++ * 0.06) + 's');
-    void c.offsetWidth;
-    c.classList.add('in');
-    setTimeout(() => c.classList.add('done'), 1200);
+const btns = document.querySelectorAll('.filters button');
+const cards = document.querySelectorAll('#grid .card');
+btns.forEach(b => {
+  b.type = 'button';
+  b.addEventListener('click', () => {
+    btns.forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+
+    const selected = b.dataset.f;
+    let i = 0;
+    cards.forEach(c => {
+      const tags = (c.dataset.t || '').split(/\s+/).filter(Boolean);
+      const show = selected === 'all' || tags.includes(selected);
+      c.classList.toggle('hide', !show);
+      if (!show) return;
+      c.classList.remove('in', 'done');
+      c.style.setProperty('--d', (i++ * 0.06) + 's');
+      void c.offsetWidth;
+      c.classList.add('in');
+      setTimeout(() => c.classList.add('done'), 1200);
+    });
   });
-}));
- 
+});
+
 /* ---- nav shadow, scroll progress bar, gentle hero parallax ---- */
 const nav = document.querySelector('nav'), hero = document.querySelector('.hero');
 const bar = document.createElement('div'); bar.id = 'bar'; document.body.appendChild(bar);
@@ -66,7 +73,7 @@ function onScroll() {
 }
 addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
 onScroll();
- 
+
 /* ---- fade between pages ---- */
 document.addEventListener('click', e => {
   const a = e.target.closest('a');
@@ -79,7 +86,7 @@ document.addEventListener('click', e => {
   setTimeout(() => location.href = a.href, 260);
 });
 addEventListener('pageshow', () => document.body.classList.remove('leaving'));
- 
+
 /* ---- contact form opens the visitor's email app ---- */
 const f = document.getElementById('contact-form');
 if (f) f.addEventListener('submit', e => {
@@ -88,4 +95,3 @@ if (f) f.addEventListener('submit', e => {
   location.href = 'mailto:YOUR_EMAIL@olin.edu?subject=' + encodeURIComponent('Portfolio message from ' + n) +
     '&body=' + encodeURIComponent(msg + '\n\n' + n + ' (' + m + ')');
 });
- 
