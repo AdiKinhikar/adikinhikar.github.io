@@ -4,55 +4,84 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>5-DOF Robotic Arm | Adi Kinhikar</title>
-    <meta name="description" content="Portfolio of Adi Kinhikar, mechanical engineering student at Olin College building toward surgical robotics.">
+    <meta name="description" content="A five-degree-of-freedom robotic arm designed in Onshape with custom 3D-printed joints, planetary gearboxes, and Arduino-based control.">
     <link rel="stylesheet" href="style.css">
     <script>document.documentElement.classList.add("js")</script>
   </head>
   <body>
     <nav>
       <div class="wrap"><a class="logo" href="index.html">Adi Kinhikar</a>
-        <div><a class="l" href="index.html">Home</a><a class="l  on" href="projects.html">Projects</a><a class="l" href="contact.html">Contact</a>
+        <div><a class="l" href="index.html">Home</a><a class="l on" href="projects.html">Projects</a><a class="l" href="contact.html">Contact</a>
         </div>
       </div>
     </nav>
     <main>
       <div class="wrap">
-        <div class="page-head"><a class="back" href="projects.html">&larr; All projects</a>
+        <div class="page-head">
+          <a class="back" href="projects.html">&larr; All projects</a>
           <p class="eyebrow">Mechanical design &middot; In progress</p>
           <h1>5-DOF Robotic Arm</h1>
-          <p class="lead">A 3D printed robotic arm designed from the ground up so I understand every mechanism in it.</p>
+          <p class="lead">A custom-designed robotic manipulator with integrated stepper-driven joints, a 3D-printed structure, and an Arduino-based control architecture.</p>
         </div>
         <div class="facts">
-          <div><span>Degrees of freedom</span><b>5</b>
-          </div>
-          <div><span>CAD</span><b>Onshape</b>
-          </div>
-          <div><span>Controller</span><b>Arduino Uno R3</b>
-          </div>
+          <div><span>Timeline</span><b>October 2026 &ndash; Present</b></div>
+          <div><span>Tools</span><b>Onshape, Arduino, FDM 3D printing</b></div>
+          <div><span>Actuation</span><b>Five stepper-driven axes</b></div>
         </div>
+
+        <figure class="fig">
+          <div class="figs three">
+            <img src="robotic-arm-view-1.png" alt="Onshape CAD view of the five-degree-of-freedom robotic arm from the front" loading="lazy">
+            <img src="robotic-arm-view-2.png" alt="Onshape CAD view of the five-degree-of-freedom robotic arm from the opposite side" loading="lazy">
+            <img src="robotic-arm-gripper.png" alt="Close-up CAD view of the robotic arm's servo-actuated gripper" loading="lazy">
+          </div>
+          <figcaption>Robotic arm assembly and close-up of the gripper, designed in Onshape.</figcaption>
+        </figure>
+
         <section>
           <div class="prose">
-            <h2>Why I'm building it</h2>
-            <p>The goal is learning. Instead of buying off-the-shelf mechanisms, I'm designing the joints and gearboxes myself.</p>
- 
-            <h2>Hardware</h2>
+            <h2>Overview</h2>
+            <p>I designed and developed a five-degree-of-freedom robotic arm with custom mechanical components, stepper-driven joints, and an Arduino-based control architecture. The project began as a four-degree-of-freedom manipulator. After obtaining an additional stepper motor, I revised the mechanical architecture to accommodate a fifth independently controlled axis and expand the arm's positioning capabilities.</p>
+            <p>The arm uses a predominantly 3D-printed structure, custom joint assemblies, integrated planetary gearboxes, and a servo-actuated gripper.</p>
+
+            <h2>Design development: from 4-DOF to 5-DOF</h2>
+            <p>The initial mechanical architecture was designed around four independently controlled axes. I modified the layout and joint configuration to accommodate a fifth stepper motor while maintaining the overall assembly.</p>
+
+            <h2>Mechanical design</h2>
+            <p>I designed the complete robotic arm in Onshape, including its structural links, joint housings, motor mounts, and end-effector assembly. The mechanical structure is almost entirely 3D printed, with screws and heat-set threaded inserts used for fastening and assembly.</p>
             <ul>
-              <li>Five NEMA 17 stepper motors (2 A, 55 N&middot;cm rated) with TMC2209 drivers</li>
-              <li>Arduino Uno R3 as the controller</li>
-              <li>SG90 micro servo for the gripper</li>
-              <li>Upper arm 9 in, forearm 7 in, with parts CAD'd in Onshape and 3D printed</li>
+              <li>Five independently controlled stepper-driven axes</li>
+              <li>Custom-designed joint housings and structural links</li>
+              <li>Rotating joints supported directly by 3D-printed components</li>
+              <li>Integrated planetary gearboxes</li>
+              <li>Servo-actuated gripper</li>
             </ul>
- 
-            <h2>Motion and torque</h2>
-            <p>Arm motion is planned with inverse kinematics. Each stepper drives its joint through a two-stage, roughly 10:1 planetary gearbox, which turns the motor's 55 N&middot;cm rating into about 5.5 N&middot;m of theoretical output torque before efficiency losses.</p>
- 
-            <h2>Electronics</h2>
-            <p>I practiced the Arduino, TMC2209, and NEMA 17 wiring in Cirkit Designer before building the real circuit.</p>
+
+            <h2>Joint actuation</h2>
+            <p>I integrated NEMA 17 stepper motors with custom planetary gearboxes to provide torque multiplication at the robotic joints. The gearbox design was physically assembled and successfully tested with a stepper motor. Detailed gearbox design, calculations, and testing are documented in the <a href="project-planetary-gearbox.html">Custom Planetary Gearbox Project</a>.</p>
+
+            <h2>Electronics &amp; control</h2>
+            <h3>Motor control architecture</h3>
+            <p>The planned electronics architecture uses five NEMA 17 stepper motors, TMC2209 stepper drivers, and an Arduino Uno R3. Each motor is intended to operate as an independently controlled axis. Individual subsystem development is underway; complete five-motor integration is still in progress.</p>
+
+            <h3>System integration</h3>
+            <p>I used Cirkit Designer to develop and visualize the electronics layout before physical assembly, connecting the mechanical design with the planned motor-control architecture.</p>
+
+            <h2>Robotic kinematics</h2>
+            <p>I am currently implementing inverse kinematics to translate desired end-effector positions into individual joint angles. The objective is to coordinate movement across the five axes so the end effector can reach specified positions through calculated joint configurations.</p>
+
+            <h2>Project status</h2>
+            <p>The project has evolved from an initial four-axis concept into a five-axis robotic manipulator. The mechanical design has been developed in Onshape, and the planetary gearbox has been physically assembled and tested with a stepper motor. Current development is focused on completing the motor-control electronics, integrating all five stepper motors, and implementing inverse kinematics.</p>
+
             <div class="chips">
               <span class="chip">Onshape</span>
-              <span class="chip">3D printing</span>
-              <span class="chip">Arduino</span>
-              <span class="chip">Stepper motors</span>
+              <span class="chip">Arduino IDE</span>
+              <span class="chip">Cirkit Designer</span>
+              <span class="chip">FDM 3D printing</span>
+              <span class="chip">Mechanical design</span>
+              <span class="chip">Robotic manipulators</span>
+              <span class="chip">Embedded systems</span>
+              <span class="chip">Stepper motor control</span>
               <span class="chip">Inverse kinematics</span>
             </div>
           </div>
@@ -72,4 +101,3 @@
     <script src="script.js"></script>
   </body>
 </html>
- 
