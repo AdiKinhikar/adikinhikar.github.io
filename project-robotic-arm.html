@@ -30,12 +30,11 @@
         </div>
 
         <figure class="fig">
-          <div class="figs three">
+          <div class="figs">
             <img src="robotic-arm-view-1.png" alt="Onshape CAD view of the five-degree-of-freedom robotic arm from the front" loading="lazy">
             <img src="robotic-arm-view-2.png" alt="Onshape CAD view of the five-degree-of-freedom robotic arm from the opposite side" loading="lazy">
-            <img src="robotic-arm-gripper.png" alt="Close-up CAD view of the robotic arm's servo-actuated gripper" loading="lazy">
           </div>
-          <figcaption>Robotic arm assembly and close-up of the gripper, designed in Onshape.</figcaption>
+          <figcaption>Two views of the robotic arm assembly, designed in Onshape.</figcaption>
         </figure>
 
         <section>
@@ -59,6 +58,23 @@
 
             <h2>Joint actuation</h2>
             <p>I integrated NEMA 17 stepper motors with custom planetary gearboxes to provide torque multiplication at the robotic joints. The gearbox design was physically assembled and successfully tested with a stepper motor. Detailed gearbox design, calculations, and testing are documented in the <a href="project-planetary-gearbox.html">Custom Planetary Gearbox Project</a>.</p>
+
+            <h2>Gripper mechanism</h2>
+            <p>I designed a custom two-finger gripper actuated by an MG996R servo motor. The mechanism uses a four-gear arrangement: two 8-tooth input gears directly mesh with opposing 15-tooth partial gears integrated into the gripper fingers.</p>
+            <p>Servo rotation transfers through the directly meshing gears, producing coordinated opening and closing motion of both fingers. Integrating the larger gear profiles into the gripper geometry eliminates the need for separate linkages between the transmission and gripping mechanism.</p>
+            <p>This integrated gear-and-finger design creates a compact actuation system that combines the transmission and end-effector structure into a single mechanical assembly.</p>
+            <figure class="fig solo">
+              <img src="robotic-arm-gripper.png" alt="Onshape CAD close-up of the robotic arm's MG996R servo-actuated two-finger gripper and meshing gears" loading="lazy">
+              <figcaption>Custom gripper with directly meshing drive gears and gear profiles integrated into the fingers.</figcaption>
+            </figure>
+            <p><b>Key design features:</b></p>
+            <ul>
+              <li>MG996R servo actuation</li>
+              <li>Two 8-tooth input gears</li>
+              <li>Two integrated 15-tooth partial gears</li>
+              <li>Direct gear-to-gear engagement</li>
+              <li>Custom-designed, 3D-printed gripping fingers</li>
+            </ul>
 
             <h2>Electronics &amp; control</h2>
             <h3>Motor control architecture</h3>
